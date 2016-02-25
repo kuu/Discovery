@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IBC Discovery</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/index.min.css">
+	<link rel="stylesheet" href="css/slick.css"/>
+	<link rel="stylesheet" href="css/slick-theme.css"/>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+		  	<div class="container-fluid">
+		    	<!-- Brand and toggle get grouped for better mobile display -->
+		    	<div class="navbar-header">
+		      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-wrap" aria-expanded="false">
+			        	<span class="sr-only">Toggle navigation</span>
+			        	<span class="icon-bar"></span>
+			        	<span class="icon-bar"></span>
+			        	<span class="icon-bar"></span>
+			      	</button>
+			      	<a class="navbar-brand" href="#"><img class="logo img-responsive" src="images/ooyala_logo_header_@2x_0.png" alt=""></a>
+			    </div>
+			    <div class="collapse navbar-collapse" id="menu-wrap">
+				    <ul class="nav navbar-nav navbar-right">
+		        	    <li><a href="http://audiencebuilder.ooyala.com/ibc15_demo/">Ads</a></li>
+			            <li><a href="http://audiencebuilder.ooyala.com/discovery/">Discovery</a></li>
+		          	</ul>
+			    </div>
+		  	</div><!-- /.container-fluid -->
+		</nav>
+	</header>
+
+	<section class="bg-black">
+		<section class="container Player">
+			<section class="Player-header">
+				<!-- <h1 class="Video-name"></h1> -->
+			</section>
+			<section class="Player-wrapper">
+				<div class="Player-video" id="ooyala_player"></div>
+			</section>
+		</section>
+	</section>
+
+	<section class="Categories">
+		<ul>
+			<li class="Categories-category"><a href="#similar">Similar</a></li>
+			<li class="Categories-category"><a href="#trending">Trending</a></li>
+			<li class="Categories-category"><a href="#popular">Popular</a></li>
+			<li class="Categories-category"><a href="#recent">Recent</a></li>
+			<li class="Categories-category"><a href="#promoted">Promoted</a></li>
+		</ul>
+	</section>
+
+	<section class="Discovery">
+		<div id="similar" class="Discovery-carousel zigzag">
+			<div class="Carousel-loading la-line-scale-pulse-out">
+				<div></div><div></div><div></div><div></div><div></div>
+			</div>
+			<div class="Discovery-info">
+				<h2 class="Discovery-category">SIMILAR</h2>
+				<button class="Discovery-toggle">Show more...</button>
+			</div>
+			<div class="Carousel Carousel-similar">
+			</div>
+			<div class="Discovery-description">
+				<p>The Ooyala Discovery Similar Videos API returns videos that have related usage and behavior to a reference video. The Similar Videos API returns videos that are identified using the “people who watched this video also watched” approach. This is quite like Amazon recommendations “people who bought these products also bought”.</p>
+				<p>The Similar Videos API is designed to drive exploration of a content catalog by a user in a personalized fashion, and is not expected to keep the user watching content on the same topic. Videos returned from the API can be restricted to specific topics depending on the context. For example, if the user is on the Sports page of your site, you may want to restrict Similar Videos recommendations to the that context.</p>
+			</div>
+		</div>
+		<div id="trending" class="Discovery-carousel zigzag">
+			<div class="Carousel-loading la-line-scale-pulse-out">
+				<div></div><div></div><div></div><div></div><div></div>
+			</div>
+			<div class="Discovery-info">
+				<h2 class="Discovery-category">TRENDING
+					<div class="Discovery-filter">
+						<a class="Filter-option" data-filter="hour" data-category="trending">Hour</a>
+						<a class="Filter-option" data-filter="day" data-category="trending">Day</a>
+						<a class="Filter-option active" data-filter="week" data-category="trending">Week</a>
+						<a class="Filter-option" data-filter="month" data-category="trending">Month</a>
+					</div>
+				</h2>
+				<button class="Discovery-toggle">Show more...</button>
+			</div>
+			<div class="Carousel Carousel-trending">
+			</div>
+			<div class="Discovery-description">
+				<p>The Ooyala Discovery Trending API can return videos using two approaches.
+				First, the Momentum route returns videos that have seen the most acceleration in views in the specified time period. For example, if one of your videos becomes popular on Reddit or Facebook, it might appear in the Trending-Momentum results, which will help you viewers find videos before they become popular. Once it appears, it will be found by your regular site visitors, reinforcing its popularity. Additionally, your regular viewers are affecting the trending results. When new visitors find your site, good recommendations will make them likely to stay around longer. The Trending API affords great control over what can be displayed. For example, you could define logic similar to the following:</p>
+				<ul>
+					<li>If the viewer has not accessed the site for over 30 days, display trending content for the month.</li>
+					<li>If the viewer accessed the site between 8 and 30 days ago, display trending content for the week.</li>
+					<li>If the viewer accessed the site between 1 and 7 days ago, display trending content for the day.</li>
+					<li>If the viewer accessed the site less than 24 hours ago, display trending content for the hour.</li>
+				</ul>
+			</div>
+		</div>
+		<div id="popular" class="Discovery-carousel zigzag">
+			<div class="Carousel-loading la-line-scale-pulse-out">
+				<div></div><div></div><div></div><div></div><div></div>
+			</div>
+			<div class="Discovery-info">
+				<h2 class="Discovery-category">POPULAR
+					<div class="Discovery-filter">
+						<a class="Filter-option" data-filter="hour" data-category="popular">Hour</a>
+						<a class="Filter-option" data-filter="day" data-category="popular">Day</a>
+						<a class="Filter-option active" data-filter="week" data-category="popular">Week</a>
+						<a class="Filter-option" data-filter="month" data-category="popular">Month</a>
+					</div>
+				</h2>
+				<button class="Discovery-toggle">Show more...</button>
+			</div>
+			<div class="Carousel Carousel-popular">
+			</div>
+			<div class="Discovery-description">
+				<p>While the Trending-Momentum API can be used to alert your viewers to up-and-coming hits, no one wants to miss out on what everyone is watching.  The Trending-Top API will return your most-viewed titles over a specific time frame -- today's hits, best of the week, all-time greatest -- the choice is yours.</p>
+			</div>
+		</div>
+		<div id="recent" class="Discovery-carousel zigzag">
+			<div class="Carousel-loading la-line-scale-pulse-out">
+				<div></div><div></div><div></div><div></div><div></div>
+			</div>
+			<div class="Discovery-info">
+				<h2 class="Discovery-category">RECENT</h2>
+				<button class="Discovery-toggle">Show more...</button>
+			</div>
+			<div class="Carousel Carousel-recent">
+			</div>
+			<div class="Discovery-description">
+				<p>If you have a large library or add content frequently, you can easily create a playlist of the most recently added content, a real benefit to your loyal viewers who come to your site looking the the latest videos.</p>
+			</div>
+		</div>
+		<div id="promoted" class="Discovery-carousel zigzag">
+			<div class="Carousel-loading la-line-scale-pulse-out">
+				<div></div><div></div><div></div><div></div><div></div>
+			</div>
+			<div class="Discovery-info">
+				<h2 class="Discovery-category">PROMOTED</h2>
+
+				<button class="Discovery-toggle">Show more...</button>
+			</div>
+			<div class="Carousel Carousel-promoted">
+			</div>
+			<div class="Discovery-description">
+				<p>Suppose you have specific content you want to include along with Discovery's recommended titles.  This is easily accomplished using Promoted videos, whereby you can specify a specific video, or any video from a collection, to be placed within the Discovery results. In this example, a 'sponsored' video is placed into the 3rd position among the recommendations generated by Ooyala Discovery.  A great way to serve up specific content to your audience. </p>
+			</div>
+		</div>
+	</section>
+
+	<section class="Log">
+		<button class="Log-toggle isclose"></button>
+		<span class="Log-title">Log Impressions</span>
+		<article class="Log-feedback">
+			<div class="Log-scroll">
+				<ul>
+					<!-- <li><p><b>Trending:</b></p>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+					</li>
+					<li><p><b>Trending:</b></p>
+						<ul><li><p>video name</p></li></ul>
+					</li>
+					<li><p><b>Trending:</b></p>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+					</li>
+					<li><p><b>Trending:</b></p>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+						<ul><li><p>video name</p></li></ul>
+					</li>
+					<li><p><b>Trending:</b></p>
+						<ul><li><p>video name</p></li></ul>
+					</li> -->
+				</ul>
+			</div>
+		</article>
+	</section>
+
+	<footer class="Footer">
+		<img src="images/ooyala_logo_footer.svg" alt="">
+		<p>© 2015 Ooyala, Inc. Website Privacy Policy. Terms of Service. All Rights Reserved.</p>
+	</footer>
+
+	<script src='http://player.ooyala.com/v3/570aaf1fcc1548c298d6f9a86830b2f9'></script>
+	<script src='http://player.ooyala.com/v3/b2b8a66ef9cb40948aea3e9f7cbc1c38?namespace=promoted_namespace'></script>	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/slick.min.js"></script>
+	<script src="js/q.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
+
